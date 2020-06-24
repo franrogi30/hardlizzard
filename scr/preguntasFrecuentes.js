@@ -1,4 +1,5 @@
-let preguntasFrecientes = {
+const fs = require('fs')
+let preguntasFrecuentes = {
     bd: './data/faqs.json',
     titulo: "Preguntas Frecuentes",
     leerJSON: function() {
@@ -15,4 +16,4 @@ let preguntasFrecientes = {
         return faqs.faqs
     }
 }
-module.exports = preguntasFrecientes
+module.exports = preguntasFrecuentes

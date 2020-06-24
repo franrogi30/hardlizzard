@@ -24,7 +24,8 @@ ii. Más Votadas
 iii. Sucursales
 iv. Contacto
 v. Preguntas Frecuentes`);
-  },
+res.end()
+},
 
   enCartelera: function (res) {
     res.write(enCartelera.titulo);
@@ -33,11 +34,11 @@ v. Preguntas Frecuentes`);
     Listado de Peliculas en Cartelera
     `);
     let movies = enCartelera.listarPelis();
-    movies.forEach(function (movie) {
+    for(movie of movies) {
       res.write(`${movie.title}
       
       ${movie.overview}`);
-    });
+    };
     res.end();
   },
   masVotadas: function (res) {
@@ -48,9 +49,15 @@ v. Preguntas Frecuentes`);
 
     let movies = masVotadas.listarPelis();
     movies.forEach(function (movie) {
-      res.write(`${movie.title}  "rating: " ${movie.vote_average}
+      res.write(`${movie.title}  
+      
+      "rating: " ${movie.vote_average}
 
-      ${movie.overview}`);
+
+      
+      ${movie.overview}`
+      
+      );
     });
     res.end();
   },
@@ -60,7 +67,7 @@ v. Preguntas Frecuentes`);
 
     Listado de Salas disponibles
     
-    `)
+    `);
     let theathers = sucursales.listarCines();
     theathers.forEach(function (theather) {
       res.write(`${theather.name}
@@ -69,11 +76,10 @@ v. Preguntas Frecuentes`);
 
 
 
-      ${theather.description}`
-    );
-    res.end();
-  })
-},
+      ${theather.description}`);
+      res.end();
+    });
+  },
   contacto: function (res) {
     res.write(`${contacto.titulo}
 
@@ -98,7 +104,7 @@ v. Preguntas Frecuentes`);
       Respuesta: ${faq.faq_answer}
       `);
     }
-    
+
     res.end();
   },
 };

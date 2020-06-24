@@ -4,20 +4,20 @@ let router = function (url, res) {
     case "/":
       index.homePage(res);
       break;
-    case "enCartelera":
+    case "/enCartelera":
       index.enCartelera(res);
       break;
-    case "contacto":
+    case "/contacto":
       index.contacto(res);
       break;
-    case "masVotadas":
+    case "/masVotadas":
       index.masVotadas(res);
       break;
-    case "sucursales":
+    case "/sucursales":
       index.sucursales(res);
       break;
-    case "preguntas-frecuentes":
-      index.preguntasFracuentes(res);
+    case "/preguntasfrecuentes":
+      index.preguntasFrecuentes(res);
       break;
 
     default:
