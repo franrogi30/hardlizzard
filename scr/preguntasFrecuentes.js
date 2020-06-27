@@ -1,18 +1,18 @@
 const fs = require('fs')
+
 let preguntasFrecuentes = {
-    bd: './data/faqs.json',
-    titulo: "Preguntas Frecuentes",
-    leerJSON: function() {
-        let faqsJson = fs.readFileSync(this.bd, 'utf-8');
-        let faqs = JSON.parse(faqsJson);
+    db:'./data/faqs.json',
+    titulo: 'Preguntas Frecuentes',
+    leerJSON: function(){
+        let faqsJSON = fs.readFileSync(this.db, 'utf-8');
+        let faqs = JSON.parse(faqsJSON);
         return faqs
     },
-    cantidad: function() {
+    cantidad: function(){
         return this.leerJSON().total_faqs
     },
-    listarFaqs: function() {
+    listarFaqs: function(){
         let faqs = this.leerJSON();
-
         return faqs.faqs
     }
 }

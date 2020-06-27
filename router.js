@@ -16,7 +16,7 @@ let router = function (url, res) {
     case "/sucursales":
       index.sucursales(res);
       break;
-    case "/preguntasfrecuentes":
+    case "/preguntasFrecuentes":
       index.preguntasFrecuentes(res);
       break;
 

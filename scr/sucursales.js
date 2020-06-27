@@ -1,19 +1,24 @@
 const fs = require('fs')
-let Sucursales = {
-    bd: './data/theaters.json',
-    titulo: "Nuestras Salas",
-    leerJSON: function() {
-        let theatherJson = fs.readFileSync(this.bd, 'utf-8');
-        let theather = JSON.parse(theatherJson);
-        return theather
+
+let sucursales = {
+    db:'./data/theaters.json',
+    titulo: 'Nuestras Salas',
+    leerJSON: function(){
+        let theatersJSON = fs.readFileSync(this.db, 'utf-8');
+        let salas = JSON.parse(theatersJSON);
+        return salas
     },
-    cantidad: function() {
+    cantidad: function (){
         return this.leerJSON().total_theaters
     },
-    listarCines: function() {
+    listarCines: function (){
         let theaters = this.leerJSON();
-
         return theaters.theaters
+        }
+        
     }
-}
-module.exports = Sucursales
+
+
+
+
+module.exports = sucursales

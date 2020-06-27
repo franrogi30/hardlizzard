@@ -45,7 +45,10 @@ res.end()
     res.write(masVotadas.titulo);
     res.write(`Total de películas en cartelera: " + ${masVotadas.cantidad()}
 
-    Listado de Peliculas de mayor Rating`);
+    Listado de Peliculas de mayor Rating
+    
+    
+    `);
 
     let movies = masVotadas.listarPelis();
     movies.forEach(function (movie) {
@@ -68,42 +71,42 @@ res.end()
     Listado de Salas disponibles
     
     `);
-    let theathers = sucursales.listarCines();
-    theathers.forEach(function (theather) {
-      res.write(`${theather.name}
-
-                 ${theather.address}
-
-
-
-      ${theather.description}`);
-      res.end();
-    });
-  },
+    let theaters = sucursales.listarCines();
+    theaters.forEach(function (theater) {
+      res.write('\n');
+      res.write(theater.name);
+      res.write('\n');
+      res.write(theater.address);
+      res.write('\n');
+      res.write(theater.description);
+  });
+  res.end()
+    },
+  
   contacto: function (res) {
-    res.write(`${contacto.titulo}
-
-    
-  ${contacto.contenido}`);
-
-    res.end();
+    res.write(contacto.Titulo);
+        res.write('\n\n');
+        res.write(contacto.Contenido)
+        res.end()
   },
-  preguntasFrencuentes: function (res) {
-    res.write(preguntasFrencuentes.titulo);
-    res.write(`Total de preguntas: ${preguntasFrencuentes.cantidad()}
+  preguntasFrecuentes: function (res) {
+    res.write(preguntasFrecuentes.titulo);
+    res.write(`Total de preguntas: ${preguntasFrecuentes.cantidad()}
 
 
     Listado de Preguntas Frecuentes
     
     `);
 
-    let faqs = preguntasFrencuentes.listarFaqs();
-    for (faq of faqs) {
-      res.write(`Pregunta:  ${faq.faq_title}
-
-      Respuesta: ${faq.faq_answer}
-      `);
-    }
+    let faqs = preguntasFrecuentes.listarFaqs();
+       for (faq of faqs) {
+            res.write('\n');
+            res.write('Pregunta: ' + faq.faq_title);
+            res.write('\n');
+            res.write('Resúesta: ' + faq.faq_answer);
+            res.write('\n');
+           
+        }
 
     res.end();
   },
